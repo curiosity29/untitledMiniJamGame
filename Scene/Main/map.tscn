@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=4 uid="uid://2rlf142akvxn"]
+
+[ext_resource type="Script" uid="uid://cbicu0nfxkils" path="res://Scene/Main/map.gd" id="1_atpxl"]
+[ext_resource type="Texture2D" uid="uid://dl2w7hnjq3kpj" path="res://Resource/Texture/fire_wall.png" id="1_f7grq"]
+[ext_resource type="Texture2D" uid="uid://dsl3lnyh0ffyy" path="res://Resource/Texture/matrix_cell.png" id="2_atpxl"]
+[ext_resource type="Texture2D" uid="uid://dc552p7qdufq3" path="res://Resource/Texture/pc_background.png" id="3_gtw2m"]
+[ext_resource type="Texture2D" uid="uid://b885thno3w5wp" path="res://Resource/Tiles/object_tile.png" id="4_f7grq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtw2m"]
+resource_name = "ground_object"
+texture = ExtResource("2_atpxl")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_krui7"]
+resource_name = "walls"
+texture = ExtResource("1_f7grq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1s35"]
+resource_name = "background"
+texture = ExtResource("3_gtw2m")
+margins = Vector2i(10, 25)
+separation = Vector2i(10, 0)
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atpxl"]
+resource_name = "objects"
+texture = ExtResource("4_f7grq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_52pqi"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "pushable"
+custom_data_layer_1/type = 1
+sources/2 = SubResource("TileSetAtlasSource_krui7")
+sources/4 = SubResource("TileSetAtlasSource_x1s35")
+sources/6 = SubResource("TileSetAtlasSource_atpxl")
+sources/1 = SubResource("TileSetAtlasSource_gtw2m")
+tile_proxies/coords_level = [[3, Vector2i(0, 0)], [6, Vector2i(0, 0)], [5, Vector2i(0, 0)], [6, Vector2i(1, 0)]]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_atpxl")
+metadata/_edit_lock_ = true
+
+[node name="BackgroundLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAPAAYABAAAAAAAAAAGAAMABAAAAAAAAAAGAAIABAAAAAAAAAAMAAQABAAAAAAAAAAHAAMABAAAAAAAAAAHAAIABAAAAAAAAAAIAAMABAAAAAAAAAAJAAMABAAAAAAAAAAMAAEABAAAAAAAAAALAAEABAAAAAAAAAAKAAEABAAAAAAAAAAJAAEABAAAAAAAAAAIAAEABAAAAAAAAAAHAAEABAAAAAAAAAAGAAEABAAAAAAAAAAFAAEABAAAAAAAAAAEAAEABAAAAAAAAAADAAEABAAAAAAAAAACAAEABAAAAAAAAAABAAIABAAAAAAAAAACAAIABAAAAAAAAAADAAIABAAAAAAAAAAEAAIABAAAAAAAAAAFAAIABAAAAAAAAAAKAAMABAAAAAAAAAALAAMABAAAAAAAAAAMAAMABAAAAAAAAAANAAMABAAAAAAAAAAOAAMABAAAAAAAAAAIAAIABAAAAAAAAAAJAAIABAAAAAAAAAAKAAIABAAAAAAAAAALAAIABAAAAAAAAAAMAAIABAAAAAAAAAANAAIABAAAAAAAAAAOAAIABAAAAAAAAAAKAAQABAAAAAAAAAALAAQABAAAAAAAAAANAAQABAAAAAAAAAAOAAQABAAAAAAAAAAOAAUABAAAAAAAAAAOAAYABAAAAAAAAAANAAYABAAAAAAAAAAMAAYABAAAAAAAAAANAAUABAAAAAAAAAAMAAUABAAAAAAAAAALAAYABAAAAAAAAAAKAAYABAAAAAAAAAAKAAUABAAAAAAAAAALAAUABAAAAAAAAAAJAAUABAAAAAAAAAAJAAQABAAAAAAAAAAIAAQABAAAAAAAAAAIAAUABAAAAAAAAAAHAAQABAAAAAAAAAAGAAQABAAAAAAAAAAFAAQABAAAAAAAAAAFAAUABAAAAAAAAAAEAAUABAAAAAAAAAADAAYABAAAAAAAAAACAAYABAAAAAAAAAAEAAYABAAAAAAAAAADAAUABAAAAAAAAAACAAUABAAAAAAAAAACAAQABAAAAAAAAAABAAQABAAAAAAAAAABAAMABAAAAAAAAAACAAMABAAAAAAAAAABAAUABAAAAAAAAAADAAQABAAAAAAAAAADAAMABAAAAAAAAAAEAAMABAAAAAAAAAAFAAMABAAAAAAAAAAEAAQABAAAAAAAAAABAAAABAAAAAAAAAABAAEABAAAAAAAAAAAAAEABAAAAAAAAAAAAAIABAAAAAAAAAAAAAMABAAAAAAAAAAAAAQABAAAAAAAAAAAAAUABAAAAAAAAAAAAAYABAAAAAAAAAABAAYABAAAAAAAAAABAAcABAAAAAAAAAACAAcABAAAAAAAAAADAAcABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAFAAYABAAAAAAAAAAGAAYABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAHAAYABAAAAAAAAAAIAAYABAAAAAAAAAAJAAYABAAAAAAAAAAJAAcABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAAPAAcABAAAAAAAAAAPAAUABAAAAAAAAAAPAAQABAAAAAAAAAAPAAMABAAAAAAAAAAPAAIABAAAAAAAAAAPAAEABAAAAAAAAAAOAAEABAAAAAAAAAANAAEABAAAAAAAAAANAAAABAAAAAAAAAAMAAAABAAAAAAAAAALAAAABAAAAAAAAAAKAAAABAAAAAAAAAAJAAAABAAAAAAAAAAIAAAABAAAAAAAAAAHAAAABAAAAAAAAAAGAAAABAAAAAAAAAAFAAAABAAAAAAAAAAEAAAABAAAAAAAAAADAAAABAAAAAAAAAACAAAABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_52pqi")
+
+[node name="GroundObjectLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+position = Vector2(2, 0)
+tile_map_data = PackedByteArray("AAAKAAQAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAMAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_52pqi")
+y_sort_origin = 1
+use_kinematic_bodies = true
+collision_visibility_mode = 1
+
+[node name="WallLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+position = Vector2(2, 0)
+tile_map_data = PackedByteArray("AAAKAAAAAgAAAAAAAAALAAAAAgAAAAAAAAANAAEAAgAAAAAAAAAPAAQAAgAAAAAAAAAPAAUAAgAAAAAAAAAPAAYAAgAAAAAAAAAJAAAAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAEAAgAAAAAAAAABAAEAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAADAAAAAgAAAAAAAAAEAAAAAgAAAAAAAAAFAAAAAgAAAAAAAAAGAAAAAgAAAAAAAAAHAAAAAgAAAAAAAAAIAAAAAgAAAAAAAAAMAAAAAgAAAAAAAAANAAAAAgAAAAAAAAAOAAEAAgAAAAAAAAAPAAMAAgAAAAAAAAAPAAcAAgAAAAAAAAAOAAcAAgAAAAAAAAANAAcAAgAAAAAAAAAMAAcAAgAAAAAAAAALAAcAAgAAAAAAAAAKAAcAAgAAAAAAAAAJAAYAAgAAAAAAAAAIAAYAAgAAAAAAAAAHAAUAAgAAAAAAAAAGAAUAAgAAAAAAAAAFAAYAAgAAAAAAAAAEAAcAAgAAAAAAAAADAAcAAgAAAAAAAAACAAcAAgAAAAAAAAABAAcAAgAAAAAAAAABAAYAAgAAAAAAAAAFAAcAAgAAAAAAAAAGAAYAAgAAAAAAAAAHAAYAAgAAAAAAAAAJAAcAAgAAAAAAAAAPAAIAAgAAAAAAAAAPAAEAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_52pqi")
+y_sort_origin = 1
+use_kinematic_bodies = true
+collision_visibility_mode = 1
+
+[node name="ObjectLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+position = Vector2(2, 0)
+tile_map_data = PackedByteArray("AAAGAAMABgAAAAAAAAAHAAMABgAAAAAAAAAIAAMABgAAAAAAAAAKAAIABgAAAAAAAAAFAAEABgAAAAAAAAALAAUABgAAAAAAAAALAAQABgAAAAAAAAADAAUABgAAAAAAAAAIAAIABgAAAAAAAAAEAAMABgABAAAAAAANAAQABgAAAAAAAAA=")
+tile_set = SubResource("TileSet_52pqi")
+y_sort_origin = 1
+use_kinematic_bodies = true
+collision_visibility_mode = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 510.0
+offset_right = 885.0
+offset_bottom = 593.0
+theme_override_font_sizes/font_size = 32
+text = "Number of item in place:"

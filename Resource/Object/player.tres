@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ObjectResource" load_steps=3 format=3 uid="uid://q0ndneu6gis7"]
+
+[ext_resource type="Script" uid="uid://c8v3cjfg02qh0" path="res://Script/object_resource.gd" id="1_v3ys8"]
+[ext_resource type="PackedScene" uid="uid://dlpsit1fsxsev" path="res://Scene/player.tscn" id="2_qk6ih"]
+
+[resource]
+script = ExtResource("1_v3ys8")
+id = "player"
+layer_id = 3
+coord_id = Vector2i(0, 1)
+scene = ExtResource("2_qk6ih")
+metadata/_custom_type_script = ExtResource("1_v3ys8")
