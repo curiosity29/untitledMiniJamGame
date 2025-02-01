@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1iwqvwedbsqi"]
+
+[ext_resource type="Script" uid="uid://bompomrfsy6vt" path="res://Global/Navigator.gd" id="1_m4vst"]
+[ext_resource type="PackedScene" uid="uid://csuqyv3if44s1" path="res://Scene/Main/level_select.tscn" id="2_kikh4"]
+[ext_resource type="PackedScene" uid="uid://dg6a78duc7gs" path="res://Scene/Levels/level_1.tscn" id="3_fwfgc"]
+
+[node name="Navigator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m4vst")
+LEVEL_SELECT = ExtResource("2_kikh4")
+level_map = Dictionary[int, PackedScene]({
+1: ExtResource("3_fwfgc")
+})
+
+[node name="MainSceneContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control" type="Control" parent="MainSceneContainer"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

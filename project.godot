@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Database="*res://Global/Database.gd"
 InstanceHelper="*res://Global/InstanceHelper.gd"
+Event="*res://Global/Event.gd"
 
 [display]
 
@@ -26,6 +27,15 @@ window/size/viewport_width=1024
 window/size/viewport_height=576
 window/size/window_width_override=1024
 window/size/window_height_override=576
+window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg")
+
+[godot_resource_groups]
+
+auto_rebuild=true
 
 [input]
 

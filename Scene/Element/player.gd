@@ -52,6 +52,7 @@ func move(direction: Vector2) -> bool:
 	map.move_tile_object(current_tile, target_tile, self)
 	global_position = object_layer.map_to_local(target_tile)
 	#visual
+	#look_at(global_position + Vector2(direction))
 	sprite.global_position = object_layer.map_to_local(current_tile)
 	
 	return true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlpsit1fsxsev"]
 
-[ext_resource type="Script" uid="uid://b1h825vr8vjtn" path="res://Scene/player.gd" id="1_kelma"]
+[ext_resource type="Script" uid="uid://b1h825vr8vjtn" path="res://Scene/Element/player.gd" id="1_kelma"]
 [ext_resource type="Texture2D" uid="uid://b1fr0mf0xvhh" path="res://Resource/Texture/ad_carry_enemy.png" id="2_y8w33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j47wa"]
@@ -16,13 +16,17 @@ shape = SubResource("RectangleShape2D_j47wa")
 texture = ExtResource("2_y8w33")
 
 [node name="DownRayCast" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(0, 128)
 
 [node name="UpRayCast" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(0, -128)
 
 [node name="LeftRayCast" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(-128, 0)
 
 [node name="RightRayCast" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(128, 0)

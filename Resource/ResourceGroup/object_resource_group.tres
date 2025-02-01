@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceGroup" load_steps=2 format=3 uid="uid://d0t7sm6nguaqc"]
+
+[ext_resource type="Script" uid="uid://bmqgntqwnsr78" path="res://addons/godot_resource_groups/resource_group.gd" id="1_lay5u"]
+
+[resource]
+script = ExtResource("1_lay5u")
+base_folder = "res://Resource/Object"
+includes = Array[String](["**.tres"])
+excludes = Array[String]([])
+paths = Array[String](["res://Resource/Object/box.tres", "res://Resource/Object/player.tres"])
+metadata/_custom_type_script = ExtResource("1_lay5u")

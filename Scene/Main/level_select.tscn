@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://csuqyv3if44s1"]
+
+[ext_resource type="Script" uid="uid://dvriamhmj8mjp" path="res://Scene/Main/level_select.gd" id="1_3cx7v"]
+[ext_resource type="PackedScene" uid="uid://b6504ng7bsxcf" path="res://Scene/Element/level_select_button.tscn" id="2_1dymt"]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3cx7v")
+level_button_scene = ExtResource("2_1dymt")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 213.0
+offset_top = 139.0
+offset_right = 854.0
+offset_bottom = 452.0
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 5

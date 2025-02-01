@@ -48,6 +48,7 @@ func request_push(direction: Vector2i) -> bool:
 	#visual
 	sprite.global_position = object_layer.map_to_local(current_tile)
 	current_tile = target_tile
+	
 	return true
 
 func _physics_process(delta: float) -> void:
