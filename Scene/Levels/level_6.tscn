@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=4 uid="uid://bgfa57euc4laa"]
+
+[ext_resource type="PackedScene" uid="uid://2rlf142akvxn" path="res://Scene/Main/map.tscn" id="1_c7t15"]
+
+[node name="Level6" instance=ExtResource("1_c7t15")]
+level_index = 6
+
+[node name="ObjectLayer" parent="." index="4"]
+tile_map_data = PackedByteArray("AAALAAoACwAEAAAAAAAJAAsACwABAAAAAAAJAAgACwACAAAAAAALAAgACwACAAAAAAANAAgACwACAAAAAAAKAAgACwADAAAAAAAMAAgACwADAAAAAAAOAAgACwADAAAAAAAPAAgACwACAAAAAAAIAAgACwADAAAAAAA=")

@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dc552p7qdufq3" path="res://Resource/Texture/pc_background.png" id="2_vypyo"]
 
 [node name="LevelSelectButton" type="Button"]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(128, 128)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -928.0
-offset_bottom = -480.0
+offset_right = -1792.0
+offset_bottom = -1152.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true

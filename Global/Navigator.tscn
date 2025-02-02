@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1iwqvwedbsqi"]
+[gd_scene load_steps=8 format=3 uid="uid://d1iwqvwedbsqi"]
 
 [ext_resource type="Script" uid="uid://bompomrfsy6vt" path="res://Global/Navigator.gd" id="1_m4vst"]
 [ext_resource type="PackedScene" uid="uid://csuqyv3if44s1" path="res://Scene/Main/level_select.tscn" id="2_kikh4"]
 [ext_resource type="PackedScene" uid="uid://dg6a78duc7gs" path="res://Scene/Levels/level_1.tscn" id="3_fwfgc"]
+[ext_resource type="PackedScene" uid="uid://dta3lsatyr282" path="res://Scene/Levels/level_2.tscn" id="4_6kiuc"]
+[ext_resource type="PackedScene" uid="uid://cmcewro0vvgdj" path="res://Scene/Levels/level_3.tscn" id="5_nfo5v"]
+[ext_resource type="PackedScene" uid="uid://2r4elqf1ah4q" path="res://Scene/Levels/level_4.tscn" id="6_acftq"]
+[ext_resource type="PackedScene" uid="uid://bgl5shrcweqnw" path="res://Scene/Levels/level_5.tscn" id="7_syjsw"]
 
 [node name="Navigator" type="Control"]
 layout_mode = 3
@@ -14,7 +18,12 @@ grow_vertical = 2
 script = ExtResource("1_m4vst")
 LEVEL_SELECT = ExtResource("2_kikh4")
 level_map = Dictionary[int, PackedScene]({
-1: ExtResource("3_fwfgc")
+1: ExtResource("3_fwfgc"),
+2: ExtResource("4_6kiuc"),
+3: ExtResource("5_nfo5v"),
+4: ExtResource("6_acftq"),
+5: ExtResource("7_syjsw"),
+11: ExtResource("2_kikh4")
 })
 
 [node name="MainSceneContainer" type="Control" parent="."]

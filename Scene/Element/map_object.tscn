@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhfrtgbhjmcvr"]
+
+[ext_resource type="Script" uid="uid://bx3ahdqnnp0q8" path="res://Scene/Element/map_object.gd" id="1_uu38r"]
+[ext_resource type="Texture2D" uid="uid://by32e8vdx80de" path="res://Resource/Texture/slow_enemy.png" id="2_nw0xk"]
+
+[node name="MapObject" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_uu38r")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_nw0xk")

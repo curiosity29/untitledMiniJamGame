@@ -1,5 +1,356 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg6a78duc7gs"]
+[gd_scene load_steps=3 format=4 uid="uid://dg6a78duc7gs"]
 
 [ext_resource type="PackedScene" uid="uid://2rlf142akvxn" path="res://Scene/Main/map.tscn" id="1_8twhv"]
+[ext_resource type="Texture2D" uid="uid://cu8vu4geoduk5" path="res://Resource/Texture/arrow.png" id="2_sxagu"]
 
 [node name="Level1" instance=ExtResource("1_8twhv")]
+
+[node name="BackgroundLayer" parent="." index="0"]
+tile_map_data = PackedByteArray("AAAPAAYABAAAAAAAAAAMAAQABAAAAAAAAAAJAAMABAAAAAAAAAAKAAMABAAAAAAAAAALAAMABAAAAAAAAAAMAAMABAAAAAAAAAANAAMABAAAAAAAAAAOAAMABAAAAAAAAAAKAAQABAAAAAAAAAALAAQABAAAAAAAAAANAAQABAAAAAAAAAAOAAQABAAAAAAAAAAOAAUABAAAAAAAAAAOAAYABAAAAAAAAAANAAYABAAAAAAAAAAMAAYABAAAAAAAAAANAAUABAAAAAAAAAAMAAUABAAAAAAAAAALAAYABAAAAAAAAAAKAAYABAAAAAAAAAAKAAUABAAAAAAAAAALAAUABAAAAAAAAAAJAAUABAAAAAAAAAAJAAQABAAAAAAAAAAIAAQABAAAAAAAAAAIAAUABAAAAAAAAAAEAAcABAAAAAAAAAAFAAcABAAAAAAAAAAFAAYABAAAAAAAAAAGAAYABAAAAAAAAAAGAAUABAAAAAAAAAAHAAUABAAAAAAAAAAHAAYABAAAAAAAAAAIAAYABAAAAAAAAAAJAAYABAAAAAAAAAAJAAcABAAAAAAAAAAKAAcABAAAAAAAAAALAAcABAAAAAAAAAAMAAcABAAAAAAAAAANAAcABAAAAAAAAAAOAAcABAAAAAAAAAAPAAcABAAAAAAAAAAPAAUABAAAAAAAAAAPAAQABAAAAAAAAAAPAAMABAAAAAAAAAAEAAgABAAAAAAAAAAFAAgABAAAAAAAAAAGAAgABAAAAAAAAAAHAAgABAAAAAAAAAAIAAgABAAAAAAAAAAHAAcABAAAAAAAAAAGAAcABAAAAAAAAAAIAAcABAAAAAAAAAAJAAgABAAAAAAAAAAKAAgABAAAAAAAAAALAAgABAAAAAAAAAAMAAgABAAAAAAAAAANAAgABAAAAAAAAAAOAAgABAAAAAAAAAAPAAgABAAAAAAAAAALAAkABAAAAAAAAAAKAAkABAAAAAAAAAAJAAkABAAAAAAAAAAIAAkABAAAAAAAAAAHAAkABAAAAAAAAAAGAAkABAAAAAAAAAAFAAkABAAAAAAAAAAMAAkABAAAAAAAAAANAAkABAAAAAAAAAAOAAkABAAAAAAAAAAPAAkABAAAAAAAAAAJAAoABAAAAAAAAAAIAAoABAAAAAAAAAAHAAoABAAAAAAAAAAGAAoABAAAAAAAAAAKAAoABAAAAAAAAAAKAAsABAAAAAAAAAALAAoABAAAAAAAAAAMAAoABAAAAAAAAAANAAoABAAAAAAAAAAOAAoABAAAAAAAAAAOAAsABAAAAAAAAAAPAAsABAAAAAAAAAANAAsABAAAAAAAAAAMAAsABAAAAAAAAAALAAsABAAAAAAAAAAJAAsABAAAAAAAAAAIAAsABAAAAAAAAAAHAAsABAAAAAAAAAAGAAsABAAAAAAAAAAPAAoABAAAAAAAAAARAAMABAAAAAAAAAASAAQABAAAAAAAAAASAAUABAAAAAAAAAATAAYABAAAAAAAAAATAAcABAAAAAAAAAAUAAgABAAAAAAAAAAUAAkABAAAAAAAAAAVAAoABAAAAAAAAAAVAAsABAAAAAAAAAASAAMABAAAAAAAAAATAAQABAAAAAAAAAATAAUABAAAAAAAAAAUAAYABAAAAAAAAAAUAAcABAAAAAAAAAAVAAgABAAAAAAAAAAVAAkABAAAAAAAAAARAAsABAAAAAAAAAARAAoABAAAAAAAAAARAAkABAAAAAAAAAARAAgABAAAAAAAAAARAAcABAAAAAAAAAARAAYABAAAAAAAAAARAAUABAAAAAAAAAARAAQABAAAAAAAAAAQAAQABAAAAAAAAAAQAAMABAAAAAAAAAAQAAUABAAAAAAAAAAQAAYABAAAAAAAAAAQAAcABAAAAAAAAAAQAAgABAAAAAAAAAAQAAkABAAAAAAAAAAQAAoABAAAAAAAAAAQAAsABAAAAAAAAAAQAAwABAAAAAAAAAAPAAwABAAAAAAAAAAOAAwABAAAAAAAAAANAAwABAAAAAAAAAAMAAwABAAAAAAAAAALAAwABAAAAAAAAAAKAAwABAAAAAAAAAAJAAwABAAAAAAAAAAIAAwABAAAAAAAAAAHAAwABAAAAAAAAAARAAwABAAAAAAAAAASAAwABAAAAAAAAAASAAsABAAAAAAAAAASAAoABAAAAAAAAAASAAkABAAAAAAAAAASAAgABAAAAAAAAAASAAcABAAAAAAAAAASAAYABAAAAAAAAAATAAgABAAAAAAAAAATAAkABAAAAAAAAAATAAoABAAAAAAAAAATAAsABAAAAAAAAAATAAwABAAAAAAAAAAUAAwABAAAAAAAAAAUAAsABAAAAAAAAAAUAAoABAAAAAAAAAAVAAwABAAAAAAAAAAVAAYABAAAAAAAAAAVAAcABAAAAAAAAAAWAAcABAAAAAAAAAAWAAgABAAAAAAAAAAWAAkABAAAAAAAAAAWAAoABAAAAAAAAAAWAAsABAAAAAAAAAAIAA0ABAAAAAAAAAAJAA0ABAAAAAAAAAAJAA4ABAAAAAAAAAAKAA0ABAAAAAAAAAAKAA4ABAAAAAAAAAALAA0ABAAAAAAAAAALAA4ABAAAAAAAAAALAA8ABAAAAAAAAAAMAA0ABAAAAAAAAAAMAA4ABAAAAAAAAAAMAA8ABAAAAAAAAAANAA0ABAAAAAAAAAANAA4ABAAAAAAAAAANAA8ABAAAAAAAAAAOAA0ABAAAAAAAAAAOAA4ABAAAAAAAAAAOAA8ABAAAAAAAAAAPAA0ABAAAAAAAAAAPAA4ABAAAAAAAAAAPAA8ABAAAAAAAAAAQAA0ABAAAAAAAAAAQAA4ABAAAAAAAAAAQAA8ABAAAAAAAAAARAA0ABAAAAAAAAAARAA4ABAAAAAAAAAASAA0ABAAAAAAAAAASAA4ABAAAAAAAAAATAA0ABAAAAAAAAAAXAAkABAAAAAAAAAAXAAoABAAAAAAAAAA=")
+
+[node name="GroundRequirementLayer" parent="." index="1"]
+tile_map_data = PackedByteArray("AAAOAAUACQAAAAAAAAARAAkACQAAAAAAAAAOAAwACQAAAAAAAAA=")
+
+[node name="WallLayer" parent="." index="3"]
+tile_map_data = PackedByteArray("AAAJAAcAAgAAAAAAAAAJAAoAAgAAAAAAAAAKAAcAAgAAAAAAAAAKAAoAAgAAAAAAAAALAAcAAgAAAAAAAAALAAoAAgAAAAAAAAAMAAcAAgAAAAAAAAAMAAoAAgAAAAAAAAANAAYAAgAAAAAAAAANAAsAAgAAAAAAAAAOAAQAAgAAAAAAAAAOAA0AAgAAAAAAAAAPAAQAAgAAAAAAAAAPAA0AAgAAAAAAAAAQAAYAAgAAAAAAAAAQAAsAAgAAAAAAAAARAAgAAgAAAAAAAAARAAoAAgAAAAAAAAASAAgAAgAAAAAAAAASAAoAAgAAAAAAAAAIAAcAAgAAAAAAAAAIAAgAAgAAAAAAAAAIAAkAAgAAAAAAAAAIAAoAAgAAAAAAAAAMAAYAAgAAAAAAAAAMAAsAAgAAAAAAAAANAAQAAgAAAAAAAAANAAUAAgAAAAAAAAANAAwAAgAAAAAAAAANAA0AAgAAAAAAAAAPAAUAAgAAAAAAAAAPAAYAAgAAAAAAAAAPAAsAAgAAAAAAAAAPAAwAAgAAAAAAAAAQAAcAAgAAAAAAAAAQAAgAAgAAAAAAAAAQAAoAAgAAAAAAAAASAAkAAgAAAAAAAAA=")
+
+[node name="ObjectLayer" parent="." index="4"]
+tile_map_data = PackedByteArray("AAAKAAgACwABAAAAAAAOAAYACwAEAAAAAAAQAAkACwAEAAAAAAAOAAsACwAEAAAAAAA=")
+
+[node name="TutorialLabel" type="Label" parent="." index="6"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 235.0
+offset_right = 716.0
+offset_bottom = 410.0
+
+[node name="MoveTutorialContainer" type="Control" parent="." index="7"]
+anchors_preset = 0
+offset_left = 553.0
+offset_top = 301.0
+offset_right = 754.0
+offset_bottom = 450.0
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="MoveTutorialContainer" index="0"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 64.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="MoveTutorialContainer/Control" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_sxagu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MoveTutorialContainer/Control" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="MoveTutorialContainer" index="1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MoveTutorialContainer/Control2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_sxagu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MoveTutorialContainer/Control2" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="MoveTutorialContainer" index="2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MoveTutorialContainer/Control3" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_sxagu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MoveTutorialContainer/Control3" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control4" type="Control" parent="MoveTutorialContainer" index="3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MoveTutorialContainer/Control4" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_sxagu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MoveTutorialContainer/Control4" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MoveTutorialContainer" index="4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -25.0
+offset_right = 63.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "MOVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FoldTutorialContainer" type="Control" parent="." index="8"]
+anchors_preset = 0
+offset_left = 561.0
+offset_top = 701.0
+offset_right = 796.0
+offset_bottom = 884.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="FoldTutorialContainer" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -25.0
+offset_right = 63.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "FOLD &
+UNFOLD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="FoldTutorialContainer" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 64.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldTutorialContainer/Control" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_sxagu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="FoldTutorialContainer/Control" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="FoldTutorialContainer" index="2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -32.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldTutorialContainer/Control2" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_sxagu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="FoldTutorialContainer/Control2" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="FoldTutorialContainer" index="3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldTutorialContainer/Control3" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_sxagu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="FoldTutorialContainer/Control3" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control4" type="Control" parent="FoldTutorialContainer" index="4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="FoldTutorialContainer/Control4" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("2_sxagu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="FoldTutorialContainer/Control4" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1

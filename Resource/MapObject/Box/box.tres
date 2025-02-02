@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ObjectResource" load_steps=3 format=3 uid="uid://bse357marli3j"]
 
 [ext_resource type="Script" uid="uid://c8v3cjfg02qh0" path="res://Script/object_resource.gd" id="1_w08yb"]
-[ext_resource type="PackedScene" uid="uid://bewvlvllk2acr" path="res://Scene/Element/box.tscn" id="2_w80nm"]
+[ext_resource type="PackedScene" uid="uid://bf42nmwx1fm12" path="res://Resource/MapObject/Box/box.tscn" id="2_w80nm"]
 
 [resource]
 script = ExtResource("1_w08yb")

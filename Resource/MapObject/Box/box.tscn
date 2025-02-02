@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf42nmwx1fm12"]
+
+[ext_resource type="PackedScene" uid="uid://bhfrtgbhjmcvr" path="res://Scene/Element/map_object.tscn" id="1_ss0fu"]
+[ext_resource type="Script" uid="uid://di2wget58a0ci" path="res://Resource/MapObject/Box/box.gd" id="1_wuoyn"]
+
+[node name="HorizontallRoll" instance=ExtResource("1_ss0fu")]
+script = ExtResource("1_wuoyn")
