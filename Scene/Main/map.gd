@@ -64,6 +64,7 @@ func update_count_ground_object_on_correct_ground(object_cell_pos: Vector2i, is_
 			
 	if score_count >= required_score_count:
 		next_level_button.show()
+		SoundPlayer.play_sfx_by_id("win")
 
 var required_score_count: int = 0
 func _ready() -> void:

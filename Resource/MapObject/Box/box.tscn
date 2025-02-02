@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf42nmwx1fm12"]
+[gd_scene load_steps=4 format=3 uid="uid://bf42nmwx1fm12"]
 
 [ext_resource type="PackedScene" uid="uid://bhfrtgbhjmcvr" path="res://Scene/Element/map_object.tscn" id="1_ss0fu"]
 [ext_resource type="Script" uid="uid://di2wget58a0ci" path="res://Resource/MapObject/Box/box.gd" id="1_wuoyn"]
+[ext_resource type="Texture2D" uid="uid://b032bmvpae6e4" path="res://Resource/Tiles/Sprites.png" id="3_ccwxj"]
 
 [node name="HorizontallRoll" instance=ExtResource("1_ss0fu")]
 script = ExtResource("1_wuoyn")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("3_ccwxj")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)

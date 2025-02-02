@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlpsit1fsxsev"]
 
 [ext_resource type="Script" uid="uid://b1h825vr8vjtn" path="res://Resource/MapObject/Player/player.gd" id="1_kelma"]
-[ext_resource type="Texture2D" uid="uid://b1fr0mf0xvhh" path="res://Resource/Texture/ad_carry_enemy.png" id="2_y8w33"]
+[ext_resource type="Texture2D" uid="uid://b032bmvpae6e4" path="res://Resource/Tiles/Sprites.png" id="2_33vs4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j47wa"]
 size = Vector2(48, 48)
@@ -18,7 +18,9 @@ shape = SubResource("RectangleShape2D_j47wa")
 
 [node name="Sprite" type="Sprite2D" parent="CharacterBody2D"]
 unique_name_in_owner = true
-texture = ExtResource("2_y8w33")
+texture = ExtResource("2_33vs4")
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
 
 [node name="DownRayCast" type="RayCast2D" parent="CharacterBody2D"]
 visible = false

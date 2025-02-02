@@ -2,22 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bhfrtgbhjmcvr" path="res://Scene/Element/map_object.tscn" id="1_d400n"]
 [ext_resource type="Script" uid="uid://cfuafw75vvfjo" path="res://Resource/MapObject/VerticalRoll/vertical_roll.gd" id="2_j0o4y"]
-[ext_resource type="Texture2D" uid="uid://bh6umn1h0y2xh" path="res://Resource/Texture/pirate_ship.png" id="3_d2s4g"]
+[ext_resource type="Texture2D" uid="uid://b032bmvpae6e4" path="res://Resource/Tiles/Sprites.png" id="3_d2s4g"]
 
 [node name="VerticalRoll" instance=ExtResource("1_d400n")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 script = ExtResource("2_j0o4y")
 unfold_relative_coords = Array[Vector2i]([Vector2i(0, -1), Vector2i(0, 1)])
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("3_d2s4g")
+region_enabled = true
+region_rect = Rect2(192, 0, 64, 64)

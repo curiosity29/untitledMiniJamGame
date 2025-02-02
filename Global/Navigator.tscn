@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1iwqvwedbsqi"]
+[gd_scene load_steps=11 format=3 uid="uid://d1iwqvwedbsqi"]
 
 [ext_resource type="Script" uid="uid://bompomrfsy6vt" path="res://Global/Navigator.gd" id="1_m4vst"]
 [ext_resource type="PackedScene" uid="uid://csuqyv3if44s1" path="res://Scene/Main/level_select.tscn" id="2_kikh4"]
 [ext_resource type="PackedScene" uid="uid://dg6a78duc7gs" path="res://Scene/Levels/level_1.tscn" id="3_fwfgc"]
+[ext_resource type="PackedScene" uid="uid://buvp8qllgei40" path="res://Global/setting_menu.tscn" id="3_md5ro"]
 [ext_resource type="PackedScene" uid="uid://dta3lsatyr282" path="res://Scene/Levels/level_2.tscn" id="4_6kiuc"]
+[ext_resource type="PackedScene" uid="uid://buhmsvi403y73" path="res://Scene/Main/menu_scene.tscn" id="4_q8knc"]
 [ext_resource type="PackedScene" uid="uid://cmcewro0vvgdj" path="res://Scene/Levels/level_3.tscn" id="5_nfo5v"]
 [ext_resource type="PackedScene" uid="uid://2r4elqf1ah4q" path="res://Scene/Levels/level_4.tscn" id="6_acftq"]
 [ext_resource type="PackedScene" uid="uid://bgl5shrcweqnw" path="res://Scene/Levels/level_5.tscn" id="7_syjsw"]
+[ext_resource type="PackedScene" uid="uid://bgfa57euc4laa" path="res://Scene/Levels/level_6.tscn" id="8_syjsw"]
 
 [node name="Navigator" type="Control"]
 layout_mode = 3
@@ -17,21 +20,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m4vst")
 LEVEL_SELECT = ExtResource("2_kikh4")
+SETTING_SCENE = ExtResource("3_md5ro")
+MENU_SCENE = ExtResource("4_q8knc")
 level_map = Dictionary[int, PackedScene]({
 1: ExtResource("3_fwfgc"),
 2: ExtResource("4_6kiuc"),
 3: ExtResource("5_nfo5v"),
 4: ExtResource("6_acftq"),
 5: ExtResource("7_syjsw"),
+6: ExtResource("8_syjsw"),
 11: ExtResource("2_kikh4")
 })
 
 [node name="MainSceneContainer" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Control" type="Control" parent="MainSceneContainer"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingViewportContainer" type="SubViewportContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingSubViewport" type="SubViewport" parent="SettingViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1280, 768)
+render_target_update_mode = 0
+
+[node name="SettingMenu" parent="SettingViewportContainer/SettingSubViewport" instance=ExtResource("3_md5ro")]

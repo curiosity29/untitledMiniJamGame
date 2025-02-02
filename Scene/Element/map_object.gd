@@ -29,7 +29,7 @@ var current_direction: Vector2i = Vector2i.RIGHT
 var object_resource: ObjectResource
 
 var is_moving: bool = false
-var SPEED: float = 450
+var SPEED: float = 550
 var current_tile: Vector2i = Vector2i.ZERO
 
 # Called when the node enters the scene tree for the first time.

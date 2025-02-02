@@ -2,11 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bhfrtgbhjmcvr" path="res://Scene/Element/map_object.tscn" id="1_cdnq1"]
 [ext_resource type="Script" uid="uid://bin6m3usav6df" path="res://Resource/MapObject/HorizontalRoll/horizontall_roll.gd" id="2_xi8uo"]
-[ext_resource type="Texture2D" uid="uid://cu34o4qcoxnvd" path="res://Resource/Texture/sprinter_enemy.png" id="3_3nc1m"]
+[ext_resource type="Texture2D" uid="uid://b032bmvpae6e4" path="res://Resource/Tiles/Sprites.png" id="3_3nc1m"]
 
-[node name="VerticalRoll" instance=ExtResource("1_cdnq1")]
+[node name="HorizontalRoll" instance=ExtResource("1_cdnq1")]
 script = ExtResource("2_xi8uo")
 unfold_relative_coords = Array[Vector2i]([Vector2i(-1, 0), Vector2i(1, 0)])
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("3_3nc1m")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)

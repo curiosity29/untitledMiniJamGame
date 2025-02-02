@@ -2,11 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bhfrtgbhjmcvr" path="res://Scene/Element/map_object.tscn" id="1_rm7l0"]
 [ext_resource type="Script" uid="uid://dc5o7nefpk0j0" path="res://Resource/MapObject/SmallRoll/small_roll.gd" id="2_fbt2q"]
-[ext_resource type="Texture2D" uid="uid://ba125uluq70k8" path="res://Resource/Texture/spin_blade.png" id="2_yf3c3"]
+[ext_resource type="Texture2D" uid="uid://b032bmvpae6e4" path="res://Resource/Tiles/Sprites.png" id="3_yf3c3"]
 
 [node name="SmallRoll" instance=ExtResource("1_rm7l0")]
 script = ExtResource("2_fbt2q")
 unfold_relative_coords = Array[Vector2i]([])
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource("2_yf3c3")
+texture = ExtResource("3_yf3c3")
+region_enabled = true
+region_rect = Rect2(256, 0, 64, 64)

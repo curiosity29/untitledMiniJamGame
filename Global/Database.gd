@@ -6,7 +6,7 @@ var object_map: Dictionary# = \
 	#Vector2i(1,0): preload("res://Resource/Object/player.tres")
 #}
 
-enum TileMapLayerID {GROUND_OBJECT = 1, WALL = 2, BACKGROUND = 4, OBJECT = 6}
+enum TileMapLayerID {GROUND_OBJECT = 1, WALL = 2, BACKGROUND = 4, OBJECT = 0}
 
 @export var _all_objects = preload("res://Resource/ResourceGroup/object_resource_group.tres")
 var all_objects: Array[ObjectResource]
