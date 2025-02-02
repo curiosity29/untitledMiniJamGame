@@ -1,0 +1,223 @@
+[gd_scene load_steps=14 format=3 uid="uid://2rlf142akvxn"]
+
+[ext_resource type="Script" uid="uid://cbicu0nfxkils" path="res://Scene/Main/map.gd" id="1_atpxl"]
+[ext_resource type="Texture2D" uid="uid://dl2w7hnjq3kpj" path="res://Resource/Texture/fire_wall.png" id="1_f7grq"]
+[ext_resource type="Texture2D" uid="uid://p6fgpm01qctw" path="res://Resource/Tiles/Background.png" id="2_atpxl"]
+[ext_resource type="Texture2D" uid="uid://b032bmvpae6e4" path="res://Resource/Tiles/Sprites.png" id="2_gtw2m"]
+[ext_resource type="Texture2D" uid="uid://dc552p7qdufq3" path="res://Resource/Texture/pc_background.png" id="3_gtw2m"]
+[ext_resource type="Texture2D" uid="uid://cjdh4cufcqxc7" path="res://Resource/Tiles/hole.png" id="6_gtw2m"]
+[ext_resource type="FontFile" uid="uid://dmevt0rnekpnb" path="res://Resource/Texture/Delius-Regular.ttf" id="7_krui7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tcckm"]
+resource_name = "object"
+texture = ExtResource("2_gtw2m")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_1 = true
+1:0/0 = 0
+1:0/0/custom_data_1 = true
+2:0/0 = 0
+2:0/0/custom_data_1 = true
+3:0/0 = 0
+3:0/0/custom_data_1 = true
+4:0/0 = 0
+4:0/0/custom_data_1 = true
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_atpxl"]
+resource_name = "ground_object"
+texture = ExtResource("2_gtw2m")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_krui7"]
+resource_name = "walls"
+texture = ExtResource("1_f7grq")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1s35"]
+resource_name = "background"
+texture = ExtResource("3_gtw2m")
+margins = Vector2i(10, 25)
+separation = Vector2i(10, 0)
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_0 = true
+1:0/0 = 0
+1:0/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyv76"]
+resource_name = "ground_requirement"
+texture = ExtResource("6_gtw2m")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_52pqi"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "walkable"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "pushable"
+custom_data_layer_1/type = 1
+sources/2 = SubResource("TileSetAtlasSource_krui7")
+sources/4 = SubResource("TileSetAtlasSource_x1s35")
+sources/0 = SubResource("TileSetAtlasSource_tcckm")
+sources/1 = SubResource("TileSetAtlasSource_atpxl")
+sources/5 = SubResource("TileSetAtlasSource_hyv76")
+tile_proxies/coords_level = [[3, Vector2i(0, 0)], [6, Vector2i(0, 0)], [5, Vector2i(0, 0)], [6, Vector2i(1, 0)], [6, Vector2i(0, 0)], [8, Vector2i(0, 0)], [6, Vector2i(1, 0)], [8, Vector2i(1, 0)], [7, Vector2i(0, 0)], [8, Vector2i(2, 0)], [8, Vector2i(0, 0)], [11, Vector2i(0, 0)], [8, Vector2i(1, 0)], [11, Vector2i(1, 0)], [8, Vector2i(2, 0)], [11, Vector2i(2, 0)], [8, Vector2i(3, 0)], [11, Vector2i(3, 0)], [10, Vector2i(0, 0)], [11, Vector2i(4, 0)]]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_atpxl")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_atpxl")
+
+[node name="BackgroundLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_52pqi")
+
+[node name="GroundRequirementLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_52pqi")
+y_sort_origin = 1
+use_kinematic_bodies = true
+collision_visibility_mode = 1
+
+[node name="GroundObjectLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_52pqi")
+y_sort_origin = 1
+use_kinematic_bodies = true
+collision_visibility_mode = 1
+
+[node name="WallLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_52pqi")
+y_sort_origin = 1
+use_kinematic_bodies = true
+collision_visibility_mode = 1
+
+[node name="ObjectLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_52pqi")
+y_sort_origin = 1
+use_kinematic_bodies = true
+collision_visibility_mode = 1
+
+[node name="UnfoldedObjectLayer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_52pqi")
+y_sort_origin = 1
+use_kinematic_bodies = true
+collision_visibility_mode = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 705.0
+offset_top = 76.0
+offset_right = 1259.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 32
+text = "Number of item in place:"
+
+[node name="NextLevelButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 27.0
+offset_right = -20.0
+offset_bottom = 119.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.187881, 0.138683, 1)
+theme_override_font_sizes/font_size = 48
+flat = true
+
+[node name="ColorRect" type="ColorRect" parent="NextLevelButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.27451, 1, 1, 1)
+
+[node name="Label" type="Label" parent="NextLevelButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.961518, 4.45209e-06, 9.62615e-07, 1)
+theme_override_fonts/font = ExtResource("7_krui7")
+theme_override_font_sizes/font_size = 48
+text = "NEXT LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelNameLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -502.5
+offset_top = 71.0
+offset_right = 502.5
+offset_bottom = 253.0
+grow_horizontal = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
