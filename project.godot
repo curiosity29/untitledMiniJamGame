@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="untitledMiniJamGame"
-run/main_scene="uid://d1iwqvwedbsqi"
+run/main_scene="uid://csuqyv3if44s1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
