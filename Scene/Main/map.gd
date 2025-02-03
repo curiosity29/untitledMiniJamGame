@@ -91,4 +91,4 @@ func add_object_by_id(pos: Vector2i, id: Vector2i):
 
 
 func _on_next_level_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scene/Main/menu_scene.tscn")
+	Event.level_selected.emit(level_index + 1)

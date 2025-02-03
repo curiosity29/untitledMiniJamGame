@@ -39,6 +39,10 @@ enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg")
 
 auto_rebuild=true
 
+[gui]
+
+theme/custom="uid://cruwaq7uoak2g"
+
 [input]
 
 up={

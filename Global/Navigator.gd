@@ -21,7 +21,10 @@ func change_scene(packed_scene: PackedScene, do_close_settting: bool = true):
 	var new_scene = packed_scene.instantiate()
 	main_scene_container.add_child(new_scene)
 	current_packed_scene = packed_scene
+	
 # Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	change_scene(MENU_SCENE)
 	Event.level_selected.connect(on_level_selected)
@@ -29,6 +32,9 @@ func _ready() -> void:
 	Event.request_open_setting.connect(open_setting)
 	Event.request_close_setting.connect(close_setting)
 	Event.request_open_level_select.connect(change_scene.bind(LEVEL_SELECT))
+	
+	SoundPlayer.play_music(SoundPlayer.main_music)
+
 
 func on_level_selected(level_index: int = 1):
 	if level_index in level_map:
@@ -45,13 +51,15 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("exit"):
 		if setting_viewport_container.visible:
 			close_setting()
-			
 		else:
 			open_setting()
+
 			
 func close_setting():
+	main_scene_container.show()
 	setting_viewport_container.hide()
 func open_setting():
 	setting_viewport_container.show()
+	main_scene_container.hide()
 func exit_to_menu():
 	change_scene(MENU_SCENE)

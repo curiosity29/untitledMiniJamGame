@@ -21,10 +21,11 @@ func _process(delta: float) -> void:
 
 func _on_music_slider_value_changed(value: float) -> void:
 	State.music_volume = value
-
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
 
 func _on_sfx_slider_value_changed(value: float) -> void:
-	State.music_volume = value
+	State.sfx_volume = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sfx"), value)
 
 
 func _on_close_button_pressed() -> void:

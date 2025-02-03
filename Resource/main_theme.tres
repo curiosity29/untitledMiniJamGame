@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cruwaq7uoak2g"]
+
+[ext_resource type="FontFile" uid="uid://cmyexjnvfmggc" path="res://Resource/Texture/Delius-Regular.ttf" id="1_wdlf1"]
+
+[resource]
+default_font = ExtResource("1_wdlf1")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://2rlf142akvxn"]
+[gd_scene load_steps=17 format=3 uid="uid://2rlf142akvxn"]
 
 [ext_resource type="Script" uid="uid://cbicu0nfxkils" path="res://Scene/Main/map.gd" id="1_atpxl"]
 [ext_resource type="Texture2D" uid="uid://dl2w7hnjq3kpj" path="res://Resource/Texture/fire_wall.png" id="1_f7grq"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b032bmvpae6e4" path="res://Resource/Tiles/Sprites.png" id="2_gtw2m"]
 [ext_resource type="Texture2D" uid="uid://dc552p7qdufq3" path="res://Resource/Texture/pc_background.png" id="3_gtw2m"]
 [ext_resource type="Texture2D" uid="uid://cjdh4cufcqxc7" path="res://Resource/Tiles/hole.png" id="6_gtw2m"]
-[ext_resource type="FontFile" uid="uid://dmevt0rnekpnb" path="res://Resource/Texture/Delius-Regular.ttf" id="7_krui7"]
+[ext_resource type="Texture2D" uid="uid://dgpouoguitb8d" path="res://Resource/Tiles/buttonPressed.png" id="7_x1s35"]
+[ext_resource type="Texture2D" uid="uid://bxqf02kapy1tg" path="res://Resource/Tiles/buttonNormal.png" id="8_tcckm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tcckm"]
 resource_name = "object"
@@ -98,6 +99,12 @@ sources/1 = SubResource("TileSetAtlasSource_atpxl")
 sources/5 = SubResource("TileSetAtlasSource_hyv76")
 tile_proxies/coords_level = [[3, Vector2i(0, 0)], [6, Vector2i(0, 0)], [5, Vector2i(0, 0)], [6, Vector2i(1, 0)], [6, Vector2i(0, 0)], [8, Vector2i(0, 0)], [6, Vector2i(1, 0)], [8, Vector2i(1, 0)], [7, Vector2i(0, 0)], [8, Vector2i(2, 0)], [8, Vector2i(0, 0)], [11, Vector2i(0, 0)], [8, Vector2i(1, 0)], [11, Vector2i(1, 0)], [8, Vector2i(2, 0)], [11, Vector2i(2, 0)], [8, Vector2i(3, 0)], [11, Vector2i(3, 0)], [10, Vector2i(0, 0)], [11, Vector2i(4, 0)]]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tcckm"]
+texture = ExtResource("7_x1s35")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yc1wr"]
+texture = ExtResource("8_tcckm")
+
 [node name="Map" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -167,45 +174,6 @@ offset_bottom = 159.0
 theme_override_font_sizes/font_size = 32
 text = "Number of item in place:"
 
-[node name="NextLevelButton" type="Button" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -320.0
-offset_top = 27.0
-offset_right = -20.0
-offset_bottom = 119.0
-grow_horizontal = 0
-theme_override_colors/font_color = Color(1, 0.187881, 0.138683, 1)
-theme_override_font_sizes/font_size = 48
-flat = true
-
-[node name="ColorRect" type="ColorRect" parent="NextLevelButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.27451, 1, 1, 1)
-
-[node name="Label" type="Label" parent="NextLevelButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.961518, 4.45209e-06, 9.62615e-07, 1)
-theme_override_fonts/font = ExtResource("7_krui7")
-theme_override_font_sizes/font_size = 48
-text = "NEXT LEVEL"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="LevelNameLabel" type="Label" parent="."]
 visible = false
 layout_mode = 1
@@ -220,4 +188,27 @@ grow_horizontal = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[node name="NextLevelButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 860.0
+offset_top = 20.0
+offset_right = 1261.0
+offset_bottom = 172.0
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_tcckm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tcckm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tcckm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yc1wr")
+
+[node name="Label" type="Label" parent="NextLevelButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "NEXT LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true

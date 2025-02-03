@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://chj0slp4idvgb"]
+[gd_scene load_steps=6 format=3 uid="uid://chj0slp4idvgb"]
 
 [ext_resource type="Script" uid="uid://qbcaouy477hg" path="res://Global/sound_player.gd" id="1_tdeen"]
+[ext_resource type="AudioStream" uid="uid://5yu3ylfseg50" path="res://Resource/Sound/folding-paper-trimmed.mp3" id="2_djsbh"]
+[ext_resource type="AudioStream" uid="uid://c02poihs1fgm2" path="res://Resource/Sound/Paper_Patchwork_converted.mp3" id="2_tpqp7"]
+[ext_resource type="AudioStream" uid="uid://bwolouocy4t2q" path="res://Resource/Sound/sliding-paper-on-table-trimmed.mp3" id="3_m1cpi"]
+[ext_resource type="AudioStream" uid="uid://bi6ypc77t0hs6" path="res://Resource/Sound/paper-turn-trimmed-2.mp3" id="4_djsbh"]
 
 [node name="SoundPlayer" type="Control"]
 layout_mode = 3
@@ -11,27 +15,41 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tdeen")
 sound_map = Dictionary[String, AudioStream]({
-"fold": null,
+"fold": ExtResource("2_djsbh"),
 "move": null,
-"push": null,
+"push": ExtResource("3_m1cpi"),
 "restart": null,
 "undo": null,
-"unfold": null,
+"unfold": ExtResource("4_djsbh"),
 "win": null
 })
+main_music = ExtResource("2_tpqp7")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+[node name="SfxPlayers" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="SfxPlayers"]
+bus = &"Sfx"
 
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SfxPlayers"]
+bus = &"Sfx"
 
-[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="SfxPlayers"]
+bus = &"Sfx"
 
-[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="SfxPlayers"]
+bus = &"Sfx"
 
-[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="SfxPlayers"]
+bus = &"Sfx"
 
-[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="SfxPlayers"]
+bus = &"Sfx"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="SfxPlayers"]
+bus = &"Sfx"

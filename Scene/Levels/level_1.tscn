@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://2rlf142akvxn" path="res://Scene/Main/map.tscn" id="1_8twhv"]
 [ext_resource type="Texture2D" uid="uid://cu8vu4geoduk5" path="res://Resource/Texture/arrow.png" id="2_sxagu"]
-[ext_resource type="FontFile" uid="uid://dmevt0rnekpnb" path="res://Resource/Texture/Delius-Regular.ttf" id="3_cfqvl"]
+[ext_resource type="FontFile" uid="uid://cmyexjnvfmggc" path="res://Resource/Texture/Delius-Regular.ttf" id="3_cfqvl"]
 
 [node name="Level1" instance=ExtResource("1_8twhv")]
 
@@ -387,7 +387,7 @@ theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="NextLevelButton" parent="." index="12"]
+[node name="NextLevelButton" parent="." index="13"]
 offset_left = -295.0
 offset_top = 28.0
 offset_right = -8.0

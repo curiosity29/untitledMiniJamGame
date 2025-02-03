@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1iwqvwedbsqi"]
+[gd_scene load_steps=12 format=3 uid="uid://d1iwqvwedbsqi"]
 
 [ext_resource type="Script" uid="uid://bompomrfsy6vt" path="res://Global/Navigator.gd" id="1_m4vst"]
 [ext_resource type="PackedScene" uid="uid://csuqyv3if44s1" path="res://Scene/Main/level_select.tscn" id="2_kikh4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://2r4elqf1ah4q" path="res://Scene/Levels/level_4.tscn" id="6_acftq"]
 [ext_resource type="PackedScene" uid="uid://bgl5shrcweqnw" path="res://Scene/Levels/level_5.tscn" id="7_syjsw"]
 [ext_resource type="PackedScene" uid="uid://bgfa57euc4laa" path="res://Scene/Levels/level_6.tscn" id="8_syjsw"]
+[ext_resource type="PackedScene" uid="uid://burl1ffoogplr" path="res://Scene/Levels/level_7.tscn" id="11_q8knc"]
 
 [node name="Navigator" type="Control"]
 layout_mode = 3
@@ -29,7 +30,8 @@ level_map = Dictionary[int, PackedScene]({
 4: ExtResource("6_acftq"),
 5: ExtResource("7_syjsw"),
 6: ExtResource("8_syjsw"),
-11: ExtResource("2_kikh4")
+7: ExtResource("11_q8knc"),
+8: ExtResource("4_q8knc")
 })
 
 [node name="MainSceneContainer" type="Control" parent="."]

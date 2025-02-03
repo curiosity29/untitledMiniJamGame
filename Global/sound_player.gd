@@ -4,8 +4,10 @@ extends Node
 
 @export var sound_map: Dictionary[String, AudioStream]
 
+@export var main_music: AudioStream
 
-
+@onready var music_player: AudioStreamPlayer = $MusicPlayer
+@onready var sfx_players: Control = $SfxPlayers
 
 
 static var add_max_db = 10.
@@ -18,15 +20,27 @@ func _ready():
 	add_min_linear_db = db_to_linear(add_min_db)
 
 func play_music(audio: AudioStream, adjusted_volumb_db: float = 0.):
-	play(audio, true, State.music_volume, adjusted_volumb_db)
-
+	#play_music_(audio, true, State.music_volume, adjusted_volumb_db)
+	play_music_(audio, true, 0, adjusted_volumb_db)
 func play_sfx(audio: AudioStream, adjusted_volumb_db: float = 0.):
-	play(audio, false, State.sfx_volume, adjusted_volumb_db)
-
+	#play(audio, false, State.sfx_volume, adjusted_volumb_db)
+	play(audio, false, 0, adjusted_volumb_db)
 func play_sfx_by_id(id: String):
 	if id in sound_map:
 		play_sfx(sound_map[id] , 0.)
+
+func play_music_(audio: AudioStream, single: bool = false, setting_volume_db: float = 0., adjusted_volumb_db: float = 0.):
+	if not audio:
+		return
 	
+	#if single:
+		#stop()
+	
+	music_player.volume_db = setting_volume_db + adjusted_volumb_db
+	music_player.stream = audio
+	music_player.play()
+
+
 func play(audio: AudioStream, single: bool = false, setting_volume_db: float = 0., adjusted_volumb_db: float = 0.):
 	if not audio:
 		return
@@ -34,7 +48,7 @@ func play(audio: AudioStream, single: bool = false, setting_volume_db: float = 0
 	if single:
 		stop()
 	
-	for player: AudioStreamPlayer in get_children():
+	for player: AudioStreamPlayer in sfx_players.get_children():
 		if not player.playing:
 			player.volume_db = setting_volume_db + adjusted_volumb_db
 			player.stream = audio

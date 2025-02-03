@@ -42,28 +42,28 @@ func _process(delta: float) -> void:
 	pass
 
 
-func request_push(direction: Vector2i) -> bool:
+func request_push(direction: Vector2i, force: bool = false) -> bool:
 	if is_moving: return false
 	current_tile = object_layer.local_to_map(global_position)
 	var target_tile = current_tile + Vector2i(direction)
 	
 	
-	
-	var object_tile_data: TileData = object_layer.get_cell_tile_data(target_tile)
-	var wall_tile_data: TileData = wall_layer.get_cell_tile_data(target_tile)
-	if wall_tile_data:
-		return false
-	
-	if object_tile_data:
-		var object: MapObject = map.coord_to_object_map[target_tile]
-		if not object.is_folded:
+	if not force:
+		var object_tile_data: TileData = object_layer.get_cell_tile_data(target_tile)
+		var wall_tile_data: TileData = wall_layer.get_cell_tile_data(target_tile)
+		if wall_tile_data:
 			return false
-		## NOTE: pushable here is able to push along with this object (at the same time)
-		if not object_tile_data.get_custom_data("pushable"):
-			if not object.request_push(direction):
+		
+		if object_tile_data:
+			var object: MapObject = map.coord_to_object_map[target_tile]
+			if not object.is_folded:
 				return false
-		else:
-			return false
+			### NOTE: pushable here is able to push along with this object (at the same time)
+			#if not object_tile_data.get_custom_data("pushable"):
+				#if not object.request_push(direction):
+					#return false
+			else:
+				return false
 
 	is_moving = true
 	map.move_tile_object(current_tile, target_tile, self)
@@ -91,18 +91,18 @@ func check_non_object_tile_empty(tile_coord: Vector2i) -> bool:
 		return false
 	return true
 
-func request_fold() -> bool:
+func request_fold(force: bool = false) -> bool:
 	var is_success: bool = false
 	if is_folded:
-		is_success = unfold_self()
+		is_success = unfold_self(force)
 	else:
-		is_success = fold_self()
+		is_success = fold_self(force)
 	if is_success:
 		Event.object_fold_change.emit(self, is_folded)
 	
 	return is_success
 	
-func fold_self() -> bool:
+func fold_self(force: bool = false) -> bool:
 	for relative_tile_coord in unfold_relative_coords:
 		var tile_coord = relative_tile_coord + current_tile
 		ground_object_layer.set_cell(tile_coord)
@@ -114,17 +114,18 @@ func fold_self() -> bool:
 	is_folded = true
 	print("				folded at %s" % current_tile)
 	return true
-func unfold_self() -> bool:
+func unfold_self(force: bool = false) -> bool:
 	## check if all unfold tile is empty, then unfold if satisfy
 	print("		attempting unfold at: ", current_tile)
-	if not check_non_object_tile_empty(current_tile):
-		print("				failed at relative tile: ", current_tile)
-		return false
-	for relative_tile_coord in unfold_relative_coords:
-		var tile_coord = relative_tile_coord + current_tile
-		if not check_tile_empty(tile_coord):
-			print("				failed at relative tile: ", relative_tile_coord)
+	if not force:
+		if not check_non_object_tile_empty(current_tile):
+			print("				failed at relative tile: ", current_tile)
 			return false
+		for relative_tile_coord in unfold_relative_coords:
+			var tile_coord = relative_tile_coord + current_tile
+			if not check_tile_empty(tile_coord):
+				print("				failed at relative tile: ", relative_tile_coord)
+				return false
 	for relative_tile_coord in unfold_relative_coords:
 		var tile_coord = relative_tile_coord + current_tile
 		ground_object_layer.set_cell(tile_coord, Database.TileMapLayerID.GROUND_OBJECT, object_resource.unfold_side_coord_id)

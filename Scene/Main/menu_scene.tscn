@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://buhmsvi403y73"]
 
 [ext_resource type="Script" uid="uid://dg5d51sdpbjem" path="res://Scene/Main/menu_scene.gd" id="1_0lg7m"]
-[ext_resource type="Texture2D" uid="uid://u0w7lp45gcuh" path="res://Resource/Tiles/titleScreen.png" id="2_0lg7m"]
-[ext_resource type="FontFile" uid="uid://dmevt0rnekpnb" path="res://Resource/Texture/Delius-Regular.ttf" id="3_5322j"]
-[ext_resource type="AudioStream" uid="uid://dt8uhwoqcj4sh" path="res://Resource/Fnaf Nose honk.mp3" id="4_ohxos"]
+[ext_resource type="Texture2D" uid="uid://csbsxfmrk1w0g" path="res://Resource/Tiles/titleScreen.png" id="2_0lg7m"]
+[ext_resource type="FontFile" uid="uid://cmyexjnvfmggc" path="res://Resource/Texture/Delius-Regular.ttf" id="3_5322j"]
+[ext_resource type="AudioStream" uid="uid://f8fww1bfd0y3" path="res://Resource/Fnaf Nose honk.mp3" id="4_ohxos"]
 
 [node name="MenuScene" type="Control"]
 layout_mode = 3
@@ -22,6 +22,7 @@ mouse_filter = 2
 texture = ExtResource("2_0lg7m")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -55,9 +56,10 @@ mouse_filter = 2
 
 [node name="LevelSelectButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_top = -47.0
-offset_right = 401.0
-offset_bottom = 73.0
+offset_left = -22.5
+offset_top = 255.0
+offset_right = 378.5
+offset_bottom = 375.0
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_5322j")
 theme_override_font_sizes/font_size = 48
@@ -65,15 +67,17 @@ text = "Level select"
 
 [node name="SettingButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_top = 105.0
-offset_right = 401.0
-offset_bottom = 225.0
+offset_left = 536.5
+offset_top = -219.0
+offset_right = 807.5
+offset_bottom = -99.0
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_5322j")
 theme_override_font_sizes/font_size = 48
 text = "Setting"
 
 [node name="Button" type="Button" parent="Control"]
+visible = false
 layout_mode = 2
 offset_top = 257.0
 offset_right = 401.0

@@ -14,13 +14,8 @@ tile_map_data = PackedByteArray("AAABAAMAAAAGAAAAAAABAAQAAAAGAAAAAAABAAUAAAAGAAA
 [node name="ObjectLayer" parent="." index="5"]
 tile_map_data = PackedByteArray("AAADAAcAAAABAAAAAAAFAAQAAAADAAAAAAAJAAcAAAACAAAAAAAFAAgAAAAEAAAAAAAKAAQAAAAAAAAAAAA=")
 
-[node name="NextLevelButton" parent="." index="8"]
-visible = false
-offset_left = -427.0
+[node name="NextLevelButton" parent="." index="9"]
+offset_left = -291.0
+offset_top = 53.0
 offset_right = -23.0
-
-[node name="Label" parent="NextLevelButton" index="0"]
-offset_left = 89.0
-offset_top = -57.0
-offset_right = 19.0
-offset_bottom = -84.0
+offset_bottom = 145.0
