@@ -15,6 +15,7 @@ tile_map_data = PackedByteArray("AAAAAAYAAAAGAAAAAAAAAAcAAAAGAAAAAAAAAAgAAAAGAAA
 tile_map_data = PackedByteArray("AAAFAAcAAAAAAAAAAAACAAYAAAADAAAAAAADAAcAAAACAAAAAAADAAkAAAADAAAAAAAFAAIAAAACAAAAAAAFAAQAAAAAAAAAAAAFAAgAAAACAAAAAAAHAAMAAAADAAAAAAAHAAQAAAAAAAAAAAAJAAYAAAABAAAAAAA=")
 
 [node name="NextLevelButton" parent="." index="9"]
-offset_left = -301.0
-offset_top = 412.0
-offset_bottom = 581.0
+offset_left = 864.0
+offset_top = 22.0
+offset_right = 1265.0
+offset_bottom = 171.0
